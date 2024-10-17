@@ -1,6 +1,9 @@
+#include<iostream>
+#include<conio.h>
+#include<bits/stdc++.h>
 class Solution {
 public:
-    void align(string& a, int count, int maxWidth) {
+    void align(string & a, int count, int maxWidth) {
         int i = 0;
         if (count -1!= 0) {
             int total=(maxWidth-a.size());
@@ -20,6 +23,7 @@ public:
                     if (espace > 0) {
                         b += ' ';
                         espace--;
+
                     }
                 } else {
                     b += a[i];
@@ -77,3 +81,13 @@ public:
         return ans;
     }
 };
+int main(){
+    Solution s;
+    vector<string> words={"This","is","an","example","of","text","justification"};
+    int maxWidth=16;
+    vector<string> res=s.fullJustify(words,maxWidth);
+    for(int i =0;i<res.size();i++){
+        cout<<res[i]<<endl;
+    }
+       
+}
